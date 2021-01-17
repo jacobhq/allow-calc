@@ -1,0 +1,12 @@
+name: Build release
+on:
+  push:
+  pull_request:
+jobs:
+  composer-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: montudor/action-zip@v0.1.1
+        with:
+          args: zip -qq -r builds/build.zip src
