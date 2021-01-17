@@ -1,0 +1,20 @@
+{
+  "name": "Hegarty Allow Calculator",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Always allow calculator on hegartymaths.",
+  "homepage_url": "http://jacobhq.xyz",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Hegarty!"
+  },
+  "permissions": [
+    "https://hegartymaths.com/assessment",
+    "activeTab"
+  ]
+}
