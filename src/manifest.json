@@ -16,6 +16,6 @@
   },
   "permissions": [
     "https://hegartymaths.com/assessment",
-    "activeTab"
+    "tab"
   ]
 }
