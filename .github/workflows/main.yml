@@ -12,4 +12,5 @@ jobs:
           args: zip -qq -r build.zip src
       - uses: actions/upload-artifact@v2
         with:
-          name: ./build.zip
+          name: build
+          path: ${{ github.workspace }}/build.zip
