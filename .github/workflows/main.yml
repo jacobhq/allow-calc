@@ -3,10 +3,14 @@ on:
   push:
   pull_request:
 jobs:
-  composer-install:
+  zip-file:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: composer install --ansi --no-progress --no-interaction --prefer-dist
       - uses: montudor/action-zip@v0.1.1
         with:
           args: zip -qq -r build.zip src
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build.zip
