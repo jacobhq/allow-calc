@@ -12,12 +12,3 @@ jobs:
         with:
           name: build
           path: ${{ github.workspace }}/src
-  get-info:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: bobheadxi/deployments@v0.4.3
-        name: Add build to README
-        with:
-          step: start
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: release
