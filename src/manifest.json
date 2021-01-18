@@ -12,7 +12,7 @@
     "persistent": true
   },
   "browser_action": {
-    "default_title": "Hegarty!"
+    "default_title": "Enable calculator | Hegarty"
   },
   "permissions": [
     "activeTab"
