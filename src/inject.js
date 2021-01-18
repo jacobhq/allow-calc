@@ -4,16 +4,12 @@
 
 	// just place a div at top right
 	function removeElements() {
-		const icon = document.getElementsByClassName('hm-calc red');
-		const noCalc = document.getElementsByClassName('Assessment__meta');
-		icon.parentNode.removeChild(icon);
-	}
-	var div = document.createElement('div');
-	div.style.position = 'fixed';
-	div.style.top = 0;
-	div.style.right = 0;
-	div.textContent = 'Injected!';
-	document.body.appendChild(div);
+        const icon = document.querySelector('.hm-calc');
+        const container = document.querySelector('.Assessment__meta ul li');
+        icon.classList.remove('red');
+        icon.classList.add('green');
+    }
+    removeElements()
 
 	alert('inserted self... giggity');
 
