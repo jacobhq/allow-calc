@@ -11,10 +11,17 @@
     ],
     "persistent": true
   },
+  "content_scripts": [
+      {
+        "matches": ["*://hegartymaths.com/assessment"],
+        "js": ["inject.js"]
+      }
+  ],
   "browser_action": {
     "default_title": "Enable calculator | Hegarty"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "*://hegartymaths.com/assessment"
   ]
 }
