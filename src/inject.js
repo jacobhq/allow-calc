@@ -5,9 +5,9 @@
 	// just place a div at top right
 	function removeElements() {
         const icon = document.querySelector('.hm-calc');
-        const container = document.querySelector('.Assessment__meta ul li');
         icon.classList.remove('red');
         icon.classList.add('green');
+        document.body.innerHTML = document.body.innerHTML.replace(/Do not use a calculator/g, "You may use a calculator");
     }
     removeElements()
 
