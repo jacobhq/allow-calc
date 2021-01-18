@@ -1,4 +1,4 @@
-name: Build release
+name: Release
 on:
   push:
   pull_request:
@@ -8,6 +8,16 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/upload-artifact@v2
+        name: Zip file
         with:
           name: build
           path: ${{ github.workspace }}/src
+  get-info:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bobheadxi/deployments@v0.4.3
+        name: Add build to README
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: release
