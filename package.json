@@ -1,0 +1,23 @@
+{
+  "name": "allow-calc",
+  "version": "0.0.1",
+  "description": "A chrome extension to always allow calculator on hegartymaths.",
+  "main": "src/background.js",
+  "scripts": {
+    "test": "./node_modules/.bin/eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobhq/allow-calc.git"
+  },
+  "author": "Jacob Marshall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobhq/allow-calc/issues"
+  },
+  "homepage": "https://github.com/jacobhq/allow-calc#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.18.0"
+  }
+}
