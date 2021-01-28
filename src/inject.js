@@ -1,4 +1,4 @@
-(function() {
+window.onload = (function() {
 	function init() {
         // Change icon (Not needed)
         // const icon = document.querySelector('.hm-calc');
