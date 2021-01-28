@@ -9,7 +9,7 @@
         // document.body.innerHTML = document.body.innerHTML.replace(/Do not use a calculator/g, "You may use a calculator");
 
         // Change calculator text
-        const listItem = document.getElementByClassName("Assessment__meta").firstChild;
+        const listItem = document.getElementsByClassName("Assessment__meta").firstChild;
         listItem.innerHTML('<i class="hm hm-calc green"></i>You may use a calculator')
     }
     init()
