@@ -14,7 +14,7 @@
   "content_scripts": [
       {
         "matches": ["*://hegartymaths.com/assessment"],
-        "js": ["inject.js"]
+        "js": ["jquery.min.js", "inject.js"]
       }
   ],
   "browser_action": {
