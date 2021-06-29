@@ -12,23 +12,3 @@ jobs:
         with:
           name: build
           path: ${{ github.workspace }}/src
-      - name: README Template
-        # You may pin to the exact commit or the version.
-        # uses: probablykasper/readme-template-action@1b63c40e3e83ebf16a2a9a81af187f574b7d310d
-        uses: probablykasper/readme-template-action@v1.0.0
-        with:
-          # Your github personal access token with `read:user` scope
-          token: 
-          # The file to use as template
-          template: # default is TEMPLATE.md
-          # The output file
-          output: # default is README.md
-      - name: Update README.md
-          run: |
-            if [[ "$(git status --porcelain)" != "" ]]; then
-              git config user.name "GitHub Action"
-              git config user.email "action@github.com"
-              git add .
-              git commit -m "Auto-update README.md"
-              git push
-            fi
