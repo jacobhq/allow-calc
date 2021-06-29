@@ -1,6 +1,6 @@
 {
   "name": "allow-calc",
-  "version": "0.0.1",
+  "version": "1.1.2",
   "description": "A chrome extension to always allow calculator on hegartymaths.",
   "main": "src/background.js",
   "scripts": {
