@@ -1,7 +1,7 @@
 {
   "name": "Hegarty Allow Calculator (Canary build)",
   "version": "1.2.1",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "Always allow calculator on hegartymaths.",
   "homepage_url": "http://jacobhq.xyz",
   "icons": { "16": "press-icon_16x16.png", "48": "press-icon_48x48.png", "128": "press-icon_128x128.png" },
