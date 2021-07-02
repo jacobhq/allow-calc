@@ -5,6 +5,9 @@
   "description": "Always allow calculator on hegartymaths.",
   "homepage_url": "http://jacobhq.xyz",
   "icons": { "16": "press-icon_16x16.png", "48": "press-icon_48x48.png", "128": "press-icon_128x128.png" },
+  "action": {
+    "default_popup": "popup.html"
+  },
   "background": {
     "scripts": [
       "background.js"
