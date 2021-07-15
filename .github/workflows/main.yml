@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v2
       - name:  'Automated Version Bump'
         uses:  'phips28/gh-action-bump-version@master'
+        with:
+          commit-message: 'ci(Bumps version to {{version}})'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v2
