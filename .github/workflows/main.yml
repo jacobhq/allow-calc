@@ -3,10 +3,12 @@ on:
   push:
   pull_request:
 jobs:
-  zip-file:
+  main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Update version in package.json
+        uses: maks-stupak/gh-action-bump-version@v7.1.5
       - uses: actions/upload-artifact@v2
         name: Zip file
         with:
