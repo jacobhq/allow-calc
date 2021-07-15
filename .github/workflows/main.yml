@@ -6,7 +6,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Update version in package.json
         uses: maks-stupak/gh-action-bump-version@v7.1.5
       - uses: actions/upload-artifact@v2
