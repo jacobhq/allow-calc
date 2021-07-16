@@ -10,8 +10,10 @@ jobs:
       - name:  'Automated Version Bump'
         uses:  'phips28/gh-action-bump-version@master'
         with:
-          commit-message: 'ci(Bumps version to {{version}})'
+          commit-message: 'ci(versioning): Bumps version to {{version}}'
         env:
+          GITHUB_USER: jhqci
+          GITHUB_EMAIL: jacobhq.extensions@gmail.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v2
         name: Zip file
