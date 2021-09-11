@@ -2,7 +2,7 @@
   "name": "allow-calc",
   "displayName": "Hegarty allow calculator",
   "description": "A chrome extension to always allow calculator on hegartymaths.",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
