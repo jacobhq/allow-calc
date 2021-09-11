@@ -27,11 +27,8 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
       {
         matches: ['http://*/*', 'https://*/*'],
         js: ['./dist/content/index.global.js'],
+        run_at: 'document_end'
       },
-      {
-        "matches": ["https://hegartymaths.com/assessment"],
-        "js": ["inject.js"]
-      }
     ],
     icons: {
       16: './assets/icon-512.png',
