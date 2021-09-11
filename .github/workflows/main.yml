@@ -24,7 +24,7 @@ jobs:
           version: 6.11.0
       - uses: creepinson/pnpm-action@master
         with:
-          arguments: '["i", "build"]'
+          arguments: '["build"]'
       - uses: actions/upload-artifact@v2
         name: Zip file
         with:
