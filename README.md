@@ -1,6 +1,8 @@
 # allow-calc
 A chrome extension to always allow calculator on hegartymaths.
 
+[![Release](https://github.com/jacobhq/allow-calc/actions/workflows/main.yml/badge.svg)](https://github.com/jacobhq/allow-calc/actions/workflows/main.yml)
+
 ## Installation
 ### Get from the webstore
 [![Get on the webstore](https://github.com/jacobhq/allow-calc/blob/main/webstore-small.png)](https://chrome.google.com/webstore/detail/hegarty-allow-calculator/ompglifjmnnpmfoomlgonhoaehkbbndm?hl=en-GB)
