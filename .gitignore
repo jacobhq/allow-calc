@@ -1,11 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
 .DS_Store
-.vite-ssg-dist
-.vite-ssg-temp
-*.local
-dist
-dist-ssr
-node_modules
-components.d.ts
-.idea/
-*.log
-extension/manifest.json
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.history
+
+# secrets
+secrets.*.js
