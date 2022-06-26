@@ -1,12 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import { Box, ChakraProvider, Container, Divider, FormControl, FormLabel, Heading, HStack, Switch, Text } from '@chakra-ui/react'
+import { Box, Button, ChakraProvider, Container, Divider, FormControl, FormLabel, Heading, HStack, Select, Switch, Text, useColorMode } from '@chakra-ui/react'
 import './Options.css';
 
 interface Props {
   title: string;
 }
 
+function Toggle() {
+  let { colorMode, toggleColorMode } = useColorMode()
+  let [colorSheme, setColor] = useState(colorMode)
+
+  function onColor(color: string) {
+    chrome.storage.sync.set({ colorSheme: color }, function () {
+      console.log('Value colorSheme set to ' + color);
+    });
+    // @ts-expect-error
+    setColor(color)
+    if (colorMode !== color) {
+      return toggleColorMode()
+    }
+  }
+
+  useEffect(() => {
+    chrome.storage.sync.get(['colorSheme'], function (result) {
+      setColor(result.colorSheme)
+    });
+  })
+
+  return <FormControl mt={2}>
+    <HStack justifyContent="space-between">
+      <FormLabel>Color mode</FormLabel>
+      <Select w="auto" value={colorSheme} onChange={(e) => onColor(e.target.value)}>
+        <option value='light'>Light</option>
+        <option value='dark'>Dark</option>
+      </Select>
+    </HStack>
+  </FormControl>
+}
+
 const Options: React.FC<Props> = ({ title }: Props) => {
+  let { colorMode, toggleColorMode } = useColorMode()
   let [enabled, setEnabled] = useState(true)
 
   function onEnable(checked: boolean) {
@@ -37,6 +70,7 @@ const Options: React.FC<Props> = ({ title }: Props) => {
             <Switch isChecked={enabled} onChange={(e) => onEnable(e.target.checked)} />
           </HStack>
         </FormControl>
+        <Toggle />
       </Box>
     </Container>
   </ChakraProvider>;
