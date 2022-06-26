@@ -1,6 +1,6 @@
 {
   "name": "allow-calc",
-  "version": "3.0.0-alpha",
+  "version": "3.0.0",
   "description": "A chrome extension to always allow calculator on hegartymaths.",
   "license": "BSD-3-Clause",
   "repository": {
@@ -13,7 +13,11 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
+    "@chakra-ui/react": "1.8.8",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@hot-loader/react-dom": "^17.0.2",
+    "framer-motion": "^6.3.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0"
