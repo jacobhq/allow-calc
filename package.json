@@ -8,7 +8,7 @@
     "url": "https://github.com/jacobhq/allow-calc.git"
   },
   "scripts": {
-    "ci-build": "node utils/build.js && cp -a ./src/assets/img/. /build/",
+    "ci-build": "node utils/build.js && cp -a ./src/assets/img/. ./build/",
     "build": "node utils/build.js",
     "start": "node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
