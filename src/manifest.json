@@ -14,23 +14,20 @@
     "newtab": "newtab.html"
   },
   "icons": {
-    "16": "icon-512.png",
-    "48": "icon-512.png",
+    "16": "icon-16.png",
+    "48": "icon-48.png",
     "128": "icon-512.png"
   },
   "permissions": [
     "tabs",
     "storage",
     "activeTab",
-    "http://*/",
-    "https://*/"
+    "*://hegartymaths.com/assessment"
   ],
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*",
-        "<all_urls>"
+        "*://hegartymaths.com/assessment"
       ],
       "js": [
         "contentScript.bundle.js"
