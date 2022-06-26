@@ -1,14 +1,11 @@
 name: Release
-on:
-  push:
-  pull_request:
 jobs:
   main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name:  'Automated Version Bump'
-        uses:  'phips28/gh-action-bump-version@master'
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
         with:
           commit-message: 'ci(versioning): Bumps version to {{version}}'
         env:
