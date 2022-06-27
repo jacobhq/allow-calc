@@ -8,10 +8,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon-34.png"
-  },
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
+    "default_icon": "icon-48.png"
   },
   "icons": {
     "16": "icon-16.png",
@@ -37,13 +34,15 @@
       ]
     }
   ],
-  "devtools_page": "devtools.html",
   "web_accessible_resources": [
     {
       "resources": [
         "content.styles.css",
         "icon-128.png",
-        "icon-34.png"
+        "icon-48.png",
+        "icon-16.png",
+        "press-icon.png",
+        "hegarty-logo.jpg"
       ],
       "matches": []
     }
