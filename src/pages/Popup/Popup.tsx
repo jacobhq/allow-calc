@@ -1,9 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Center, ChakraProvider, Container, Divider, FormControl, FormLabel, Heading, HStack, Link, Select, Switch, Text, useColorMode } from '@chakra-ui/react'
+import { Box, Button, Center, ChakraProvider, Container, Divider, FormControl, FormLabel, HStack, Link, Switch, Text, useColorMode } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 interface Props {
   title: string;
+}
+
+function ColorHandler() {
+  let { colorMode, toggleColorMode } = useColorMode()
+  let [colorSheme, setColor] = useState(colorMode)
+
+  useEffect(() => {
+    chrome.storage.sync.get(['colorSheme'], function (result) {
+      setColor(result.colorSheme)
+    });
+    if (colorMode !== colorSheme) {
+      return toggleColorMode()
+    }
+  })
+
+  return null
 }
 
 const Options: React.FC<Props> = () => {
@@ -24,6 +40,7 @@ const Options: React.FC<Props> = () => {
   })
 
   return <ChakraProvider>
+    <ColorHandler />
     <Container maxW="container.sm">
       <Center mt={6} w="full">
         <Text mt={2} fontSize={16} as="b" textAlign="center" w="100%">Hegarty allow calculator</Text>
