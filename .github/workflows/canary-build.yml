@@ -1,0 +1,41 @@
+name: Canary build
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - canary
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.3.0
+      - name: Read package.json
+        uses: nyaa8/package-version@v1
+        id: package-json-endpoint
+      - name: Install yarn
+        run: npm i -g yarn
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install deps
+        run: yarn install
+      - name: Build project
+        run: yarn ci-build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: allow_calc-canary-v${{ env.PACKAGE_VERSION }}
+          path: ./build
+        
+        

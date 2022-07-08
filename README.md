@@ -1,5 +1,11 @@
-# allow-calc
-A chrome extension to always allow calculator on hegartymaths.
+<p align="center">
+  <a href="https://chrome.google.com/webstore/detail/hegarty-allow-calculator/ompglifjmnnpmfoomlgonhoaehkbbndm">
+    <img src="./src/assets/img/icon-128.png" height="96">
+    <h3 align="center">Hegarty Allow Calculator</h3>
+  </a>
+</p>
+
+<p align="center">A chrome extension to always allow calculator on hegartymaths.</p>
 
 ## Installation
 ### Get from the webstore

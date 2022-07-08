@@ -1,27 +1,50 @@
 {
-  "name": "Hegarty Allow Calculator",
-  "version": "1.2.1",
-  "manifest_version": 2,
-  "description": "Always allow calculator on hegartymaths.",
-  "homepage_url": "http://jacobhq.xyz",
-  "icons": { "16": "press-icon_16x16.png", "48": "press-icon_48x48.png", "128": "press-icon_128x128.png" },
+  "manifest_version": 3,
+  "name": "Hegarty allow calcuator",
+  "description": "A chrome extension to always allow calculator on hegartymaths.",
+  "options_page": "options.html",
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": true
+    "service_worker": "background.bundle.js"
   },
-  "content_scripts": [
-      {
-        "matches": ["*://hegartymaths.com/assessment"],
-        "js": ["inject.js"]
-      }
-  ],
-  "browser_action": {
-    "default_title": "Enable calculator | Hegarty"
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-48.png"
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
   },
   "permissions": [
+    "tabs",
+    "storage",
     "activeTab",
-    "*://hegartymaths.com/assessment"
+    "https://hegartymaths.com/assessment"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://hegartymaths.com/assessment"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ],
+      "css": [
+        "content.styles.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content.styles.css",
+        "icon-128.png",
+        "icon-48.png",
+        "icon-16.png",
+        "press-icon.png",
+        "hegarty-logo.jpg"
+      ],
+      "matches": []
+    }
   ]
 }
